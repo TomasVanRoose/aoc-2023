@@ -57,7 +57,7 @@ fn find_last(line: &str) -> u32 {
 }
 
 fn part_two() {
-    let input = include_str!("./day1_part1.txt");
+    let input = include_str!("../input/day1.txt");
     let result: u32 = input
         .lines()
         .map(|line| {
