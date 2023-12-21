@@ -6,7 +6,7 @@ fn main() {
 
 fn part_one(input: &str) -> u32 {
     let width = input.find('\n').unwrap();
-    let input: Vec<_> = input.lines().map(|s| s.chars()).flatten().collect();
+    let input: Vec<_> = input.lines().flat_map(|s| s.chars()).collect();
 
     let mut current_part_nr = 0;
     let mut digit_count = 0;
@@ -41,7 +41,7 @@ fn part_one(input: &str) -> u32 {
         }
     }
 
-    return sum;
+    sum
 }
 
 /*
@@ -71,7 +71,7 @@ fn part_two_new(input: &str) -> u32 {
 
 fn part_two(input: &str) -> u32 {
     let width = input.find('\n').unwrap();
-    let input: Vec<_> = input.lines().map(|s| s.chars()).flatten().collect();
+    let input: Vec<_> = input.lines().flat_map(|s| s.chars()).collect();
 
     let mut temp_count = vec![0; input.len()];
     let mut star_count = temp_count.clone();

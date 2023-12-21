@@ -33,7 +33,7 @@ fn find_first(line: &str) -> u32 {
             return digit_str_idx as u32 + 1;
         }
     }
-    return digit;
+    digit
 }
 
 fn find_last(line: &str) -> u32 {
@@ -53,7 +53,7 @@ fn find_last(line: &str) -> u32 {
             return digit_str_idx as u32 + 1;
         }
     }
-    return digit;
+    digit
 }
 
 fn part_two() {
@@ -61,8 +61,8 @@ fn part_two() {
     let result: u32 = input
         .lines()
         .map(|line| {
-            let first = find_first(&line);
-            let last = find_last(&line);
+            let first = find_first(line);
+            let last = find_last(line);
             (first * 10) + last
         })
         .sum();
